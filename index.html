@@ -1,132 +1,262 @@
-<html>
+<!-- ✨ Welcome to our magical website! ✨
+     This is the main HTML file where all the fun begins! -->
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width 1280, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="rt.js"></script>
-<link rel="logo.png" type="image/x-icon" href="logo.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Josee</title>
-  <link rel="favicon.ico" type="image/x-icon" href="favicon.ico">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-    <meta content="Josee    property" property="og:title" />
-    <meta content="Idk what to put here so imagine something cool" property="og:description" />
-    <meta content="https://Josee.xyz    " property="og:url" />
-<meta content="logo.png" property="twitter:image" />
-    <meta content="#00FFFF" data-react-helmet="true" name="theme-color" />
-    <meta name="keywords" content="keywords, anotherkeyword" />
-<script>
-        
-                    var TxtType = function(el, toRotate, period) {
-                this.toRotate = toRotate;
-                this.el = el;
-                this.loopNum = 0;
-                this.period = parseInt(period, 10) || 2000;
-                this.txt = '';
-                this.tick();
-                this.isDeleting = false;
-            };
-        
-            TxtType.prototype.tick = function() {
-                var i = this.loopNum % this.toRotate.length;
-                var fullTxt = this.toRotate[i];
-        
-                if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-                } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-                }
-        
-                this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-        
-                var that = this;
-                var delta = 200 - 100;
-        
-                if (this.isDeleting) { delta /= 2; }
-        
-                if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-                } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-                }
-        
-                setTimeout(function() {
-                that.tick();
-                }, delta);
-            };
-        
-            window.onload = function() {
-                var elements = document.getElementsByClassName('typewrite');
-                for (var i=0; i<elements.length; i++) {
-                    var toRotate = elements[i].getAttribute('data-type');
-                    var period = elements[i].getAttribute('data-period');
-                    if (toRotate) {
-                      new TxtType(elements[i], JSON.parse(toRotate), period);
-                    }
-                }
-                // INJECT CSS
-                var css = document.createElement("style");
-                css.type = "text/css";
-                css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-                document.body.appendChild(css);
-                
-            };
+    <!-- 🧙‍♂️ Meta tags for magic and responsiveness -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Josee - Your Website Description">
+    <meta name="keywords" content="keywords, anotherkeyword">
+    
+    <!-- 🪄 Open Graph for sharing sparkles on social media! -->
+    <meta property="og:title" content="Josee" />
+    <meta property="og:description" content="Idk what to put here so imagine something cool" />
+    <meta property="og:url" content="https://Josee.xyz" />
+    <meta property="twitter:image" content="logo.png" />
+    <meta name="theme-color" content="#00FFFF" data-react-helmet="true" />
+    
+    <!-- 🏷️ Title and favicon for browser cuteness -->
+    <title>Josee</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- 🌈 Google Fonts for a stylish look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;500&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    
+    <!-- ✨ Scripts for all the interactive magic -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js" defer></script>
 
-
-            
-        </script>
-<style>
-            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
+    <!-- 🎨 Custom styles for extra sparkle! -->
+    <style>
+        /* Font Imports */
             @font-face {
                 font-family: 'main';
                 src: url('https://dropcheats.cc/assets/fonts/gc.ttf');
             }
 
+        /* Base Styles */
             body {
                 margin: 0 auto;
-                background: rgb(30, 30, 30);
-                background: linear-gradient(90deg, rgba(30, 30, 30, 1) 0%, rgba(25, 25, 25, 1) 33.3%, rgba(20, 20, 20, 1) 66.6%, rgba(15, 10, 10, 1) 100%);
+                /* background: rgb(30, 30, 30); */
+                /* background: linear-gradient(90deg, rgba(30, 30, 30, 1) 0%, rgba(25, 25, 25, 1) 33.3%, rgba(20, 20, 20, 1) 66.6%, rgba(15, 10, 10, 1) 100%); */
                 color: #fff;
-                font-family: "Nunito";
+                font-family: "Nunito", sans-serif;
+                min-height: 100vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                min-height: 100vh;
+                align-items: center;
                 -webkit-touch-callout: none;
                 -webkit-user-select: none;
                 -khtml-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
                 user-select: none;
+                position: relative;
             }
+
+        /* Title Styles */
             .title {
                 font-size: 28px;
                 font-weight: bold;
                 position: relative;
                 text-align: center;
             }
+
             .title a {
                 color: #fff;
                 position: relative;
+            text-decoration: none;
             }
+
+        /* Main Container */
             .main {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0px;
-                left: 0px;
+            width: 100vw;
+            max-width: 100vw;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                min-height: 100vh;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            z-index: 2;
+        }
+
+        /* Logo Container */
+        .logo-container {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 66px;
+            height: 73px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Content Container */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            padding: 0;
+        }
+
+        /* Title Styles */
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            position: relative;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
             }
+
+        .title a {
+            color: #fff;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            opacity: 0.7;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.separator {
+            background: none;
+            padding: 0;
+            cursor: default;
+            opacity: 0.5;
+        }
+
+        .nav-links a.separator:hover {
+            transform: none;
+            background: none;
+        }
+
+        /* Typewriter Text */
+        .typewrite {
+            display: block;
+            margin-top: 1.5rem;
+            font-size: 10px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+
+        .typewrite:hover {
+            opacity: 0.8;
+        }
+
+        /* Start Screen Styles */
+        .start {
+            cursor: pointer;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .modern-load-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-family: inherit;
+            color: #e0e0e0;
+            background: #181818;
+            border: 1.5px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.18);
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            outline: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+            margin-top: 0.5rem;
+        }
+        .modern-load-btn:hover, .modern-load-btn:focus {
+            background: #232323;
+            color: #fff;
+            box-shadow: 0 4px 18px 0 rgba(0,0,0,0.22);
+            transform: scale(1.04);
+            border-color: #444;
+        }
+        .modern-load-btn:active {
+            background: #111;
+            color: #ccc;
+            transform: scale(0.98);
+        }
+
+        /* Main Content Animation */
+        .rainx {
+            display: none;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .rainx.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Loading Text Animation */
+        .loading-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        .loading-text::after {
+            content: '...';
+            position: absolute;
+            animation: loadingDots 1.5s infinite;
+        }
+
+        @keyframes loadingDots {
+            0% { content: '.'; }
+            33% { content: '..'; }
+            66% { content: '...'; }
+            100% { content: '.'; }
+        }
+
+        /* Flicker Animation */
             .title a::before {
                 position: absolute;
                 content: attr(data-text);
@@ -134,199 +264,121 @@
                 filter: blur(10px) brightness(0);
                 animation: flicker 2s infinite;
             }
+
             @keyframes flicker {
-                0% {
-                    filter: blur(5px) brightness(1);
+            0%, 20%, 50%, 100% { filter: blur(5px) brightness(1); }
+            3%, 6%, 8%, 10%, 99% { filter: blur(5px) brightness(0); }
+            7%, 9% { filter: blur(5px) brightness(1); }
+        }
+
+        /* Footer Styles */
+        footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+            z-index: 1000;
                 }
-                3% {
-                    filter: blur(5px) brightness(0);
+
+        footer a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
                 }
-                6% {
-                    filter: blur(5px) brightness(0);
-                }
-                7% {
-                    filter: blur(5px) brightness(1);
-                }
-                8% {
-                    filter: blur(5px) brightness(0);
-                }
-                9% {
-                    filter: blur(5px) brightness(1);
-                }
-                10% {
-                    filter: blur(5px) brightness(0);
-                }
-                20% {
-                    filter: blur(5px) brightness(1);
-                }
-                50% {
-                    filter: blur(5px) brightness(1);
-                }
-                99% {
-                    filter: blur(5px) brightness(0);
-                }
-                100% {
-                    filter: blur(5px) brightness(1);
-                }
+
+        /* Heart Animation */
+        .icon.ion-heart {
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        /* Blossom Animation */
+        .blossom {
+            display: inline-block;
+            animation: blossom 3s ease-in-out infinite;
+        }
+
+        @keyframes blossom {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(15deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1); }
+            75% { transform: rotate(-15deg) scale(1.1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        #cloud-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
             }
         </style>
 </head>
-<body onmousedown = 'return false' onselectstart = 'return false' oncopy = 'return false' oncut = 'return false'>
-<div class="main start">
-<label class="title" style="opacity: 0.6; font-size: 13px;" onmousedown="startup();">
-click here to load<br />
-</label>
-</div>
-<div class="main rainx">
-<label class="title">
-<img src="logo.png" alt="" width="66" height="73">
-</label>
-<label class="title">
-<a id="flicker" data-text="Josee" style="color: #ff0707;">Josee</a><br />
-imagine something cool here idk.<a id="flicker" data-text="" style="color: #f157ff;"></a><br />
-<a style="font-size: 12px; opacity: 0.7; cursor: pointer;" onmousedown="discord();">socials</a>
-<a style="font-size: 12px;cursor: pointer;">|</a>
-<a style="font-size: 12px; opacity: 0.7; cursor: pointer;" onmousedown="window.open('https://WEBSITEHRE.COM')">download</a>
-  <a style="font-size: 12px;cursor: pointer;">|</a> 
-<a style="font-size: 12px; opacity: 0.7; cursor: pointer;" onmousedown="instructions();">somethinghere</a>
-  <a style="font-size: 12px;cursor: pointer;">|</a>
-<a style="font-size: 12px; opacity: 0.7; cursor: pointer;" onmousedown="changelogs();">changelogs</a>
-<br>
-<a class="typewrite" data-period="100" data-type='["text test lorem ipsum", "read this if gay", "7777777777", "W", "op"]' style="font-size: 10px; opacity: 0.5;">YEPCOCK</a>
-</br>
-</label>
-</div>
+
+<body onmousedown="return false" onselectstart="return false" oncopy="return false" oncut="return false">
+    <!-- ☁️ Magical background canvas for clouds! -->
+    <canvas id="cloud-bg"></canvas>
+    <div id="particles-js"></div>
+    
+    <!-- 🚪 Start Screen: The gateway to adventure! -->
+    <div class="main start">
+        <button class="modern-load-btn" onmousedown="startup();">
+            click here to load
+        </button>
+    </div>
+
+    <!-- 🏰 Main Content: Where the magic happens! -->
+    <div class="main rainx">
+        <!-- 🖼️ Logo time! Show off our brand! -->
+        <div class="logo-container">
+            <img src="assets/images/logo.png" alt="Logo">
+        </div>
+        <div class="content-container">
+            <!-- 💫 The main title sparkles here -->
+            <div class="title">
+                <a id="flicker" data-text="Narii" style="color: #39aaf5;">Narii</a><br />
+                imagine something cool here idk.<a id="flicker" data-text="" style="color: #f157ff;"></a>
+            </div>
+            <!-- 🧭 Navigation links to explore the land -->
+            <div class="nav-links">
+                <a onmousedown="discord();">socials</a>
+                <a class="separator">|</a>
+                <a onmousedown="window.open('https://WEBSITEHRE.COM')">download</a>
+                <a class="separator">|</a>
+                <a onmousedown="instructions();">somethinghere</a>
+                <a class="separator">|</a>
+                <a onmousedown="changelogs();">changelogs</a>
+            </div>
+            <!-- ⌨️ Typewriter effect for cool intros -->
+            <a class="typewrite" data-period="100" data-type='["text test lorem ipsum", "read this if gay", "7777777777", "W", "op"]'>YEPCOCK</a>
+        </div>
+    </div>
+
+    <!-- 🦶 Footer: Our magical signature! -->
+    <footer>
+        Made with <span class="footer-heart" aria-label="love">💖</span> by 
+        <a href="https://github.com/L0veNote" target="_blank" id="flicker" data-text="Narii" style="color: #ff0707;">
+            Narii <span class="blossom">🌸</span>
+        </a>
+    </footer>
+    
+    <!-- ✨ More magic: Particles! -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.39.0/tsparticles.min.js"></script>
-<script>
-        tsParticles.load("tsparticles", {
-        fpsLimit: 200,
-        interactivity: {
-            events: {
-            onClick: {
-                enable: false,
-                mode: "push"
-            },
-            onHover: {
-                enable: true,
-                mode: "repulse"
-            },
-            resize: true
-            },
-            modes: {
-            bubble: {
-                distance: 400,
-                duration: 2,
-                opacity: 0.8,
-                size: 40
-            },
-            push: {
-                quantity: 4
-            },
-            repulse: {
-                distance: 200,
-                duration: 0.4
-            }
-            }
-        },
-        particles: {
-            color: {
-            value: "#b30000"
-            },
-            links: {
-            color: "#b30000",
-            distance: 150,
-            enable: true,
-            opacity: 1,
-            width: 1
-            },
-            collisions: {
-            enable: true
-            },
-            move: {
-            direction: "none",
-            enable: true,
-            outMode: "bounce",
-            random: false,
-            speed: 3,
-            straight: false
-            },
-            number: {
-            density: {
-                enable: true,
-                value_area: 800
-            },
-            value: 50
-            },
-            opacity: {
-            value: 0.5
-            },
-            shape: {
-            type: "circle"
-            },
-            size: {
-            random: true,
-            value: 5
-            }
-        },
-        detectRetina: true
-        });
 
-        $(".rainx").hide();
-
-        function startup() {
-            
-            $(".start").fadeOut(200);
-            $(".rainx").fadeIn(400);
-
-            var audioElement = document.createElement("audio");
-            const audioElementArray = [
-                "/files/music.mp3"
-
-            ]
-            const audioName = audioElementArray[Math.floor(Math.random() * audioElementArray.length)]
-            audioElement.setAttribute("src", audioName);
-            audioElement.addEventListener(
-                "ended",
-                function () {
-                    this.volume = 0.5;
-
-                    this.play();
-                },
-                false
-            );
-            audioElement.volume = 0.5;
-            audioElement.play();
-        }
-
-        function socials() {
-            window.open("web");
-        }
-
-        function download() {
-          window.open("PUTSITEHERE")
-        }
-
-        function somethinghere() {
-          window.open("SITEHERE")
-        }
-
-        function changelogs() {
-          window.open("HERETOO")
-        }
-
-        function panel() {
-            window.location = "panel.php"; 
-        }
-    </script>
-</html>
-<html>
-<div id ="wrapper">
-</div>
-</div>
-<footer id="footer
-<div id="footer-content"></div>
-<footer><link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
- <div  Made with <i class="icon ion-heart" style="color: #e25555;"></i> by <a id="flicker" data-text="Nix" style="color: #ff0707;">l0venote</a><br />
-</footer>
+<!-- 🧹 The end! Thanks for visiting our enchanted site! -->
 </html>
