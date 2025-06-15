@@ -1,44 +1,27 @@
-# 🌸 Narii — Aesthetic Landing Page 🌸
+# 🌸 Interactive Website Template
 
-Minimal, cozy & interactive landing page with particles and fluid animations ✨
+> ✰⛧☽.₊˚ʚ Fixed and modern website template! ₊˚✧ ﾟ.✰.♡.
 
-<p align="center">
-  <a href="https://github.com/L0veNote/website">
-    <img src="https://img.shields.io/github/stars/L0veNote/website?style=social" alt="GitHub stars">
-  </a>
-  <a href="https://github.com/L0veNote/website/fork">
-    <img src="https://img.shields.io/github/forks/L0veNote/website?style=social" alt="GitHub forks">
-  </a>
-  <a href="https://github.com/L0veNote/website/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-ffb6c1?style=flat-square" alt="MIT license">
-  </a>
-  <img src="https://img.shields.io/badge/made%20with-%F0%9F%92%96-ffc0cb?style=flat-square" alt="made with love" />
-  <a href="https://L0veNote.github.io/website">
-    <img src="https://img.shields.io/badge/Live-Demo-ffaec9?style=flat-square" alt="Live Demo">
-  </a>
-</p>
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-l0venote.github.io/website-FF69B4?style=for-the-badge)](https://l0venote.github.io/website/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)]()
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)]()
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
+
+</div>
 
 ---
 
-## 📖 Table of Contents
+## ✨ Features
 
-- [🌈 Features](#-features)
-- [🚀 Quick Start](#-quick-start)
-- [📄 License](#-license)
-
----
-
-## 🌈 Features
-
-- 🎨 Fluid simulation background (WebGL-powered)
-- 🌫️ Particle layered effects
-- 💖 Flickering neon text
-- 🎀 Typewriter animated text rotation
-- 🖱️ Nav buttons for socials, downloads & changelogs
-- 🌸 Blossom bounce animation in the footer
-- 🎶 Music autoplay ready (optional)
-- 💻 Fully responsive & mobile friendly
-- 🪲 Fixed code structure & cleaned up code
+- 🌫️ **Particle layered effects**
+- 🎀 **Typewriter animated text rotation**
+- 🖱️ **Nav buttons** for socials, downloads & changelogs
+- 🌸 **Blossom bounce animation** in the footer
+- 🎶 **Music autoplay ready** (optional)
+- 💻 **Fully responsive** & mobile friendly
+- 🪲 **Fixed code structure** & cleaned up code
 
 ---
 
@@ -50,7 +33,34 @@ cd website
 # then simply open index.html in your browser 🌸
 ```
 
-Or check out the [Live Demo 🌐](https://L0veNote.github.io/website)
+**Or check out the [Live Demo 🌐](https://L0veNote.github.io/website)**
+
+---
+
+## 🛠️ Customization
+
+**Easy to modify:**
+- Update colors in CSS variables
+- Replace navigation links with your own
+- Add your content and social links
+- Customize particle effects and animations
+- Add music files for audio integration
+
+**Perfect for:** Personal portfolios, landing pages, creative showcases
+
+---
+
+## 📱 Responsive Design
+
+Works beautifully on all devices - mobile, tablet, and desktop with optimized performance and touch-friendly interactions.
+
+---
+
+## 💖 About
+
+Website I was making in 2022, bad code so I abandoned it, and now remade it! This template showcases modern web effects with clean, maintainable code.
+
+**04/09/2022 | 23:30** - *Original creation date*
 
 ---
 
@@ -58,14 +68,8 @@ Or check out the [Live Demo 🌐](https://L0veNote.github.io/website)
 
 Licensed under the [MIT License](https://github.com/L0veNote/website/blob/main/LICENSE).
 
----
+<div align="center">
 
-<p align="center">
-  Made with 💖 by <a href="https://github.com/L0veNote">Narii</a> 🌸
-</p>
+**Made with 💖 by [Narii](https://github.com/L0veNote) 🌸**
 
----
-
-Website I was making in 2022, bad code so I abonded it, and now remade it!
-
-04/09/2022 | 23:30.
+</div>
