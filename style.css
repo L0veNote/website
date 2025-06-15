@@ -59,36 +59,6 @@ html, body {
   transition: all 0.3s ease;
 }
 
-/* ✨ The magical flicker effect for our title */
-.title a::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #00bfff, #ff69b4, #00bfff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: flicker 10s infinite;
-  z-index: -1;
-}
-
-/* 🎭 Our magical flicker animation */
-@keyframes flicker {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: 0.99;
-    filter: drop-shadow(0 0 1px rgba(252, 211, 77, 0.2))
-      drop-shadow(0 0 15px rgba(255, 255, 255, 0.1))
-      drop-shadow(0 0 1px rgba(252, 211, 77, 0.1));
-  }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    opacity: 0.4;
-    filter: none;
-  }
-}
-
 /* 🎯 Typewriter effect container */
 .typewrite {
   font-family: 'Fira Mono', 'Roboto Mono', monospace;
@@ -148,9 +118,10 @@ footer {
   bottom: 1rem;
   left: 1rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   z-index: 1000;
   font-family: 'Inter', sans-serif;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 /* 🌈 Footer link styling */
@@ -274,4 +245,25 @@ footer .emoji.blossom {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* 🎨 Custom styles for our magical site! */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: url('assets/cursor-heart.png'), auto;
+}
+
+/* ✨ Heartbeat animation for the footer heart emoji */
+.footer-heart {
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+    color: #ff3366;
+    text-shadow: 0 0 15px rgba(255, 51, 102, 0.9);
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.7), inset 0 0 10px rgba(255, 51, 102, 0.5);
+    border-radius: 50%;
 }
