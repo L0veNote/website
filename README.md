@@ -1,6 +1,6 @@
 # 🌸 Narii — Aesthetic Landing Page 🌸
 
-Minimal, cozy & interactive landing page with particles, fluid animations, neon flickers and blossoms ✨
+Minimal, cozy & interactive landing page with particles and fluid animations ✨
 
 <p align="center">
   <a href="https://github.com/L0veNote/website">
